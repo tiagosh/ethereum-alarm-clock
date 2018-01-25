@@ -1,8 +1,8 @@
 pragma solidity ^0.4.18;
 
-import "contracts/Library/ExecutionLib.sol";
-import "contracts/Library/MathLib.sol";
-import "contracts/zeppelin/SafeMath.sol";
+import "../Library/ExecutionLib.sol";
+import "../Library/MathLib.sol";
+import "../zeppelin/SafeMath.sol";
 
 library PaymentLib {
     using SafeMath for uint;

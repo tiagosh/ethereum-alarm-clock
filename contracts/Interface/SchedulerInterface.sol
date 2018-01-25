@@ -1,7 +1,7 @@
 pragma solidity ^0.4.18;
 
-import "contracts/Library/RequestScheduleLib.sol";
-import "contracts/Library/SchedulerLib.sol";
+import "../Library/RequestScheduleLib.sol";
+import "../Library/SchedulerLib.sol";
 
 /**
  * @title SchedulerInterface

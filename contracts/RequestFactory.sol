@@ -1,10 +1,10 @@
 pragma solidity ^0.4.18;
 
-import "contracts/Interface/RequestFactoryInterface.sol";
-import "contracts/Interface/RequestTrackerInterface.sol";
-import "contracts/TransactionRequest.sol";
-import "contracts/Library/RequestLib.sol";
-import "contracts/IterTools.sol";
+import "./Interface/RequestFactoryInterface.sol";
+import "./Interface/RequestTrackerInterface.sol";
+import "./TransactionRequest.sol";
+import "./Library/RequestLib.sol";
+import "./IterTools.sol";
 
 /**
  * @title RequestFactory

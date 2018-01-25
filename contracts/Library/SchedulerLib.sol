@@ -1,13 +1,13 @@
 pragma solidity ^0.4.18;
 
-import "contracts/Interface/RequestFactoryInterface.sol";
+import "../Interface/RequestFactoryInterface.sol";
 
-import "contracts/Library/PaymentLib.sol";
-import "contracts/Library/RequestLib.sol";
-import "contracts/Library/RequestScheduleLib.sol";
+import "../Library/PaymentLib.sol";
+import "../Library/RequestLib.sol";
+import "../Library/RequestScheduleLib.sol";
 
-import "contracts/Library/MathLib.sol";
-import "contracts/zeppelin/SafeMath.sol";
+import "../Library/MathLib.sol";
+import "../zeppelin/SafeMath.sol";
 
 library SchedulerLib {
     using SafeMath for uint;
