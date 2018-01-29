@@ -1,8 +1,8 @@
 pragma solidity ^0.4.18;
 
-import "contracts/Interface/RequestTrackerInterface.sol";
-import "contracts/Library/GroveLib.sol";
-import "contracts/Library/MathLib.sol";
+import "./Interface/RequestTrackerInterface.sol";
+import "./Library/GroveLib.sol";
+import "./Library/MathLib.sol";
 
 /**
  * @title RequestTracker

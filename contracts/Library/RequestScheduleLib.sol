@@ -1,6 +1,6 @@
 pragma solidity ^0.4.18;
 
-import "contracts/zeppelin/SafeMath.sol";
+import "../zeppelin/SafeMath.sol";
 
 /**
  * @title RequestScheduleLib

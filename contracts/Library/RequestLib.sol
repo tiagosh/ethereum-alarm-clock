@@ -1,13 +1,13 @@
 pragma solidity ^0.4.18;
 
-import "contracts/Library/ClaimLib.sol";
-import "contracts/Library/ExecutionLib.sol";
-import "contracts/Library/PaymentLib.sol";
-import "contracts/Library/RequestMetaLib.sol";
-import "contracts/Library/RequestScheduleLib.sol";
+import "./ClaimLib.sol";
+import "./ExecutionLib.sol";
+import "./PaymentLib.sol";
+import "./RequestMetaLib.sol";
+import "./RequestScheduleLib.sol";
 
-import "contracts/Library/MathLib.sol";
-import "contracts/zeppelin/SafeMath.sol";
+import "./MathLib.sol";
+import "./zeppelin/SafeMath.sol";
 
 library RequestLib {
     using ClaimLib for ClaimLib.ClaimData;

@@ -1,8 +1,8 @@
 pragma solidity ^0.4.18;
 
-import "contracts/Library/RequestLib.sol";
-import "contracts/Library/RequestScheduleLib.sol";
-import "contracts/Interface/TransactionRequestInterface.sol";
+import "./Library/RequestLib.sol";
+import "./Library/RequestScheduleLib.sol";
+import "./Interface/TransactionRequestInterface.sol";
 
 contract TransactionRequest is TransactionRequestInterface {
     using RequestLib for RequestLib.Request;
