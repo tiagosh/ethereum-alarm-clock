@@ -7,7 +7,7 @@ import "./RequestMetaLib.sol";
 import "./RequestScheduleLib.sol";
 
 import "./MathLib.sol";
-import "./zeppelin/SafeMath.sol";
+import "../zeppelin/SafeMath.sol";
 
 library RequestLib {
     using ClaimLib for ClaimLib.ClaimData;
