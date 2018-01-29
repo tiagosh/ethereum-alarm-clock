@@ -8,7 +8,7 @@ contract TransactionRequest is TransactionRequestInterface {
     using RequestLib for RequestLib.Request;
     using RequestScheduleLib for RequestScheduleLib.ExecutionWindow;
 
-    RequestLib.Request public txnRequest;
+    RequestLib.Request txnRequest;
 
     /*
      *  addressArgs[0] - meta.createdBy

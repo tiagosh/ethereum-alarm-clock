@@ -113,7 +113,7 @@ library RequestLib {
             request.txnData.callGas,
             request.txnData.callValue,
             request.txnData.gasPrice,
-            _EXECUTION_GAS_OVERHEAD
+            EXECUTION_GAS_OVERHEAD
         );
         isValid[1] = RequestScheduleLib.validateReservedWindowSize(
             request.schedule.reservedWindowSize,
@@ -127,7 +127,7 @@ library RequestLib {
         );
         isValid[4] = ExecutionLib.validateCallGas(
             request.txnData.callGas,
-            _EXECUTION_GAS_OVERHEAD
+            EXECUTION_GAS_OVERHEAD
         );
         isValid[5] = ExecutionLib.validateToAddress(request.txnData.toAddress);
 
@@ -338,7 +338,7 @@ library RequestLib {
         // | Begin: Authorization |
         // +----------------------+
 
-        if (msg.gas < requiredExecutionGas(self).sub(_PRE_EXECUTION_GAS)) {
+        if (msg.gas < requiredExecutionGas(self).sub(PRE_EXECUTION_GAS)) {
             Aborted(uint8(AbortReason.InsufficientGas));
             return false;
         } else if (self.meta.wasCalled) {
@@ -411,7 +411,7 @@ library RequestLib {
         }
 
         // Record the amount of gas used by execution.
-        uint measuredGasConsumption = startGas.sub(msg.gas).add(_EXECUTE_EXTRA_GAS);
+        uint measuredGasConsumption = startGas.sub(msg.gas).add(EXECUTE_EXTRA_GAS);
 
         // // +----------------------------------------------------------------------+
         // // | NOTE: All code after this must be accounted for by EXECUTE_EXTRA_GAS |
