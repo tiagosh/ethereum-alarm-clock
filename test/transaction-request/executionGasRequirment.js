@@ -78,9 +78,9 @@ contract('Tests execution gas requirements', async accounts => {
 
         await waitUntilBlock(0, requestData.schedule.windowStart)
 
-        const minCallGas = requestData.txData.callGas + (await requestLib.EXECUTION_GAS_OVERHEAD()).toNumber()
+        const minCallGas = requestData.txData.callGas + (await requestLib.executionGasOverhead()).toNumber()
 
-        const tooLowCallGas = minCallGas - (await requestLib.PRE_EXECUTION_GAS()).toNumber()    
+        const tooLowCallGas = minCallGas - (await requestLib.preExecutionGas()).toNumber()    
 
         const executeTx = await txRequest.execute({
             gas: tooLowCallGas,
@@ -108,9 +108,9 @@ contract('Tests execution gas requirements', async accounts => {
 
         await waitUntilBlock(0, requestData.schedule.windowStart)
 
-        const minCallGas = requestData.txData.callGas + (await requestLib.EXECUTION_GAS_OVERHEAD()).toNumber()
+        const minCallGas = requestData.txData.callGas + (await requestLib.executionGasOverhead()).toNumber()
 
-        const tooLowCallGas = minCallGas - (await requestLib.PRE_EXECUTION_GAS()).toNumber()    
+        const tooLowCallGas = minCallGas - (await requestLib.preExecutionGas()).toNumber()    
 
         const executeTx = await txRequest.execute({
             gas: minCallGas,

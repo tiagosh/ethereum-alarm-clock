@@ -11,7 +11,7 @@ import "contracts/Library/MathLib.sol";
 contract RequestTracker is RequestTrackerInterface {
     using GroveLib for GroveLib.Index;
 
-    mapping (address => GroveLib.Index) requestsByAddress;
+    mapping (address => GroveLib.Index) public requestsByAddress;
 
     /*
      * @dev Returns the windowStart value for the given request.

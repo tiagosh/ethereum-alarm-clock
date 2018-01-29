@@ -166,7 +166,7 @@ contract RequestFactory is RequestFactoryInterface {
     }
 
     /// Mapping to hold known requests.
-    mapping (address => bool) requests;
+    mapping (address => bool) public requests;
 
     function isKnownRequest(address _address) 
         public view returns (bool isKnown)

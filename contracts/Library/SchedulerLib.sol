@@ -12,7 +12,7 @@ import "contracts/zeppelin/SafeMath.sol";
 library SchedulerLib {
     using SafeMath for uint;
 
-    address constant DONATION_BENEFACTOR = 0xecc9c5fff8937578141592e7E62C2D2E364311b8;
+    address public constant DONATION_BENEFACTOR = 0xecc9c5fff8937578141592e7E62C2D2E364311b8;
 
     struct FutureTransaction {
         address toAddress;          // Destination of the transaction.
@@ -150,7 +150,7 @@ library SchedulerLib {
                 self.callGas,
                 self.callValue,
                 self.gasPrice,
-                RequestLib.EXECUTION_GAS_OVERHEAD() //180000, line 459 RequestLib
+                RequestLib.executionGasOverhead() //180000, line 459 RequestLib
         ), this.balance);
 
         newRequestAddress = factory.createValidatedRequest.value(endowment)(

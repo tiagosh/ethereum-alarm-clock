@@ -8,7 +8,7 @@ contract TransactionRequest is TransactionRequestInterface {
     using RequestLib for RequestLib.Request;
     using RequestScheduleLib for RequestScheduleLib.ExecutionWindow;
 
-    RequestLib.Request txnRequest;
+    RequestLib.Request public txnRequest;
 
     /*
      *  addressArgs[0] - meta.createdBy
@@ -43,7 +43,7 @@ contract TransactionRequest is TransactionRequestInterface {
      *  Allow receiving ether.  This is needed if there is a large increase in
      *  network gas prices.
      */
-    function() public payable {}
+    function() payable {}
 
     /*
      *  Actions

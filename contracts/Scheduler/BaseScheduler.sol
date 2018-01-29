@@ -15,7 +15,7 @@ contract BaseScheduler is SchedulerInterface {
      * @dev Fallback function to be able to receive ether. This can occur
      *  legitimately when scheduling fails due to a validation error.
      */
-    function() public payable {}
+    function() payable {}
 
     /// Event that bubbles up the address of new requests made with this scheduler.
     event NewRequest(address request);
@@ -59,6 +59,6 @@ contract BaseScheduler is SchedulerInterface {
         require( newRequest != 0x0 );
 
         NewRequest(newRequest);
-        /// Automatically returns newRequest
+        return newRequest;
     }
 }

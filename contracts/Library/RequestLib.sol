@@ -179,7 +179,6 @@ library RequestLib {
         ];
 
         require( deserialize(self, addressValues, boolValues, uintValues, uint8Values, _callData) );
-
         return true;
     }
 
@@ -444,30 +443,30 @@ library RequestLib {
     // This is the amount of gas that it takes to enter from the
     // `TransactionRequest.execute()` contract into the `RequestLib.execute()`
     // method at the point where the gas check happens.
-    uint private constant _PRE_EXECUTION_GAS = 25000;   // TODO is this number still accurate?
+    uint private constant PRE_EXECUTION_GAS = 25000;
 
-    function PRE_EXECUTION_GAS()
+    function preExecutionGas()
         public pure returns (uint)
     {
-        return _PRE_EXECUTION_GAS;
+        return PRE_EXECUTION_GAS;
     }
 
     function requiredExecutionGas(Request storage self) 
         public view returns (uint requiredGas)
     {
-        requiredGas = self.txnData.callGas.add(_EXECUTION_GAS_OVERHEAD);
+        requiredGas = self.txnData.callGas.add(EXECUTION_GAS_OVERHEAD);
     }
 
     /*
      * The amount of gas needed to complete the execute method after
      * the transaction has been sent.
      */
-    uint private constant _EXECUTION_GAS_OVERHEAD = 180000; // TODO check accuracy of this number
+    uint private constant EXECUTION_GAS_OVERHEAD = 180000;
 
-    function EXECUTION_GAS_OVERHEAD()
+    function executionGasOverhead()
         public pure returns (uint)
     {
-        return _EXECUTION_GAS_OVERHEAD;
+        return EXECUTION_GAS_OVERHEAD;
     }
 
     
@@ -475,12 +474,12 @@ library RequestLib {
      *  The amount of gas used by the portion of the `execute` function
      *  that cannot be accounted for via gas tracking.
      */
-    uint private constant  _EXECUTE_EXTRA_GAS = 90000; // again, check for accuracy... Doubled this from Piper's original - Logan
+    uint private constant  EXECUTE_EXTRA_GAS = 90000;
 
-    function EXECUTE_EXTRA_GAS() 
+    function executeExtraGas() 
         public pure returns (uint)
     {
-        return _EXECUTE_EXTRA_GAS;
+        return EXECUTE_EXTRA_GAS;
     }
 
     /*
@@ -514,12 +513,12 @@ library RequestLib {
      *  Constant value to account for the gas usage that cannot be accounted
      *  for using gas-tracking within the `cancel` function.
      */
-    uint private constant _CANCEL_EXTRA_GAS = 85000; // Check accuracy
+    uint private constant CANCEL_EXTRA_GAS = 85000; // Check accuracy
 
-    function CANCEL_EXTRA_GAS() 
+    function cancelExtraGas() 
         public pure returns (uint)
     {
-        return _CANCEL_EXTRA_GAS;
+        return CANCEL_EXTRA_GAS;
     }
 
     /*
@@ -558,7 +557,7 @@ library RequestLib {
             );
 
             /// Calc the amount of gas caller used to call this function.
-            measuredGasConsumption = startGas.sub(msg.gas).add(_CANCEL_EXTRA_GAS);
+            measuredGasConsumption = startGas.sub(msg.gas).add(CANCEL_EXTRA_GAS);
             /// Add their gas fees to the reward.
             rewardOwed = measuredGasConsumption.mul(tx.gasprice).add(rewardOwed);
 

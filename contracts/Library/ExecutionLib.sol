@@ -34,23 +34,23 @@ library ExecutionLib {
      * may consume.  The EXTRA_GAS value represents the overhead involved in
      * request execution.
      */
-    function CALL_GAS_CEILING(uint EXTRA_GAS) 
+    function callGasCieling(uint EXTRA_GAS) 
         internal view returns (uint)
     {
         return block.gaslimit - EXTRA_GAS;
     }
 
-    /*
+    /**
      * @dev Validation: ensure that the callGas is not above the total possible gas
      * for a call.
      */
      function validateCallGas(uint callGas, uint EXTRA_GAS)
         internal view returns (bool)
     {
-        return callGas < CALL_GAS_CEILING(EXTRA_GAS);
+        return callGas < callGasCieling(EXTRA_GAS);
     }
 
-    /*
+    /**
      * @dev Validation: ensure that the toAddress is not set to the empty address.
      */
      function validateToAddress(address toAddress)
